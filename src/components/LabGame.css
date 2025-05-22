@@ -1,0 +1,37 @@
+.lab-container {
+    text-align: center;
+    color: white;
+    background-color: #222;
+    height: 100vh;
+    padding-top: 30px;
+  }
+  
+  .sequence-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .dna-slot {
+    margin: 0 10px;
+    text-align: center;
+  }
+  
+  .drop-zone {
+    width: 50px;
+    height: 50px;
+    border: 2px dashed white;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: yellow;
+    font-size: 20px;
+  }
+  
+  .drag-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
