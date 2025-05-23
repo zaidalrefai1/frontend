@@ -13,11 +13,12 @@ function App() {
         setGameState(res.data);
         setScene(res.data.scene);
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error("Failed to load game state:", err);
         alert("Failed to load game state.");
       });
   }, []);
-
+  
   const goToScene = (newScene) => {
     setScene(newScene);
     updateLocation(newScene);
@@ -25,8 +26,9 @@ function App() {
 
   if (!gameState) return <div style={{ color: "white" }}>Loading...</div>;
 
-  // ✅ Make sure this is correct
-  if (scene === "dna_lab") return <LabGame onExit={() => goToScene("hub")} />;
+  if (scene === "dna_lab") {
+    return <LabGame onExit={() => goToScene("hub")} />;
+  }
 
   return <GameCanvas scene={scene} onSceneChange={goToScene} />;
 }
