@@ -18,14 +18,16 @@ function App() {
       });
   }, []);
 
-  const goToScene = (scene) => {
-    setScene(scene);
-    updateLocation(scene);
+  const goToScene = (newScene) => {
+    setScene(newScene);
+    updateLocation(newScene);
   };
 
   if (!gameState) return <div style={{ color: "white" }}>Loading...</div>;
 
+  // ✅ Make sure this is correct
   if (scene === "dna_lab") return <LabGame onExit={() => goToScene("hub")} />;
+
   return <GameCanvas scene={scene} onSceneChange={goToScene} />;
 }
 
